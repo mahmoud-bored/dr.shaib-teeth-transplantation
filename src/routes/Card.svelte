@@ -88,7 +88,7 @@
                                 data.button.type === "action" ? "hover:bg-navy-600" : "hover:bg-gold-600", 
                                 "p-4", 
                                 "px-6", 
-                                "w-56", 
+                                "w-62", 
                                 "h-14", 
                                 "cursor-pointer", 
                                 "font-bold", 
@@ -101,7 +101,7 @@
                                 "duration-200"
                             ]}
                         >
-                            <span class="font-bold text-xl text-white">
+                            <span class="font-bold text-lg md:text-xl text-white">
                                 { isCurrentLangAr ? data.button.text.ar : data.button.text.en }
                             </span>
                             {#if data.button.arrowVisible && !(data.button.type === "action")}

@@ -83,18 +83,18 @@
                 {#if isCurrentLangAr}
                     <div class="w-8/10 flex justify-center items-start flex-col gap-3" in:fly={{ x: 50, duration: 200 }} dir="rtl">
                         <h1 class="font-bold text-3xl">
-                            برنامج الزمالة البريطانية لتقويم الأسنان
+                            زراعة الأسنان بأعلى جودة... وبدون ألم أو قلق
                         </h1>
                         <h2 class="text-xl mt-2 mr-2 font-bold">
                             احصل على الزمالة البريطانية في تقويم الأسنان وكن ضمن النخبة!
                         </h2>
                         <p class="text-lg mr-4 max-w-[850px]">
-                            هل تطمح إلى التميز في تقويم الأسنان؟ هل تريد الحصول على الزمالة البريطانية بأفضل طريقة ممكنة؟ هذا البرنامج مصمم خصيصًا لك! استثمر في مستقبلك وانضم إلى أقوى برنامج تدريبي يجمع بين العلم والخبرة العملية.
+                            في عيادتنا بالقاهرة – باستخدام زرعات ألمانية مع ضمان وراحة تامة
                         </p>
                         <a href="#contact-us">
-                            <button class="mr-4 bg-gold-500 p-4 px-6 w-56 h-14 cursor-pointer font-bold text-xl rounded-lg flex justify-between items-center hover:bg-gold-600 transition duration-200">
+                            <button class="mr-4 bg-gold-500 p-4 px-6 w-62 h-14 cursor-pointer font-bold text-xl rounded-lg flex justify-between items-center hover:bg-gold-600 transition duration-200">
                                 <span>
-                                    سجل الآن
+                                    احجز موعدك الآن
                                 </span>
                                 <svg width="51" height="20" viewBox="0 0 51 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M47.9998 15L6.99975 15" stroke="white" stroke-width="5" stroke-linecap="round"/>
@@ -150,7 +150,7 @@
             button: {
                 text: {
                     en: "Learn more",
-                    ar: "تعلم المزيد"
+                    ar: "احجز موعدك الآن"
                 },
                 arrowVisible: true,
             }
@@ -158,23 +158,32 @@
     > 
         {#snippet title()}
             <h2 class="text-2xl font-bold text-center">
-                { isCurrentLangAr ? "ما هي الزمالة البريطانية؟" : "What is the British Orthodontics Membership?" }
+                { isCurrentLangAr ? "ليه تختار زراعة الأسنان؟" : "What is the British Orthodontics Membership?" }
             </h2>
         {/snippet}
 
         {#snippet description()}
-            <p class={[
-                isCurrentLangAr ? "mr-4" : "ml-4", 
-                "w-full",
-                "md:w-9/10",
+            <ul 
+                class={[
+                    isCurrentLangAr ? "mr-8" : "ml-2", 
+                    "w-full", 
+                    "md:w-9/10",
+                    "list-disc",
                 ]}
             >
-                {
-                    isCurrentLangAr ? 
-                        "الزمالة البريطانية لطب الأسنان هي برنامج تدريبي متقدم ومُعتمد يُقدم من قبل الكليات الملكية والجمعيات البريطانية المعنية بطب الأسنان، مثل الكلية الملكية للجراحين في إنجلترا، إدنبرة، أو أيرلندا. تهدف الزمالة إلى تحسين المهارات السريرية والأكاديمية للأطباء ومساعدتهم على تحقيق مستويات عالية من التميز المهني." 
-                        : "The British Fellowship in Dentistry is an advanced and accredited training program offered by the Royal Colleges and British dental associations, such as the Royal College of Surgeons in England, Edinburgh, or Ireland. The fellowship aims to enhance clinicians' clinical and academic skills and support them in achieving high levels of professional excellence."
-                }
-            </p>
+                {#if isCurrentLangAr}
+                    <li>حل دائم بدل التركيبات المتحركة والمزعجة</li>
+                    <li>استرجاع ابتسامتك وثقتك بنفسك</li>
+                    <li>راحة في الأكل والكلام بدون إحراج</li>
+                    <li>يحافظ على شكل الفك ولا يسبب تآكل العظام</li>
+                {:else}
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                {/if}
+            </ul>
         {/snippet}
     </Card>
 
@@ -191,7 +200,7 @@
             button: {
                 text: {
                     en: "Enroll Now",
-                    ar: "سجل الآن"
+                    ar: "احجز موعدك الآن"
                 },
                 link: '/contact-us',
                 arrowVisible: true,
@@ -200,7 +209,7 @@
     >
         {#snippet title()}
             <h2 class="text-2xl font-bold text-center">
-                { isCurrentLangAr ? "لماذا يجب أن تسجل الآن؟" : "Why Choose Our Program?" }
+                { isCurrentLangAr ? "ليه تختارنا تحديدًا؟" : "Why Choose Our Program?" }
             </h2>
         {/snippet}
         {#snippet description()}
@@ -213,17 +222,18 @@
                 ]}
             >
                 {#if isCurrentLangAr}
-                    <li>تدريب عملي حصري: لا مزيد من التعلم النظري فقط، ستعالج 20 مريضًا حقيقيًا بإشراف نخبة من المتخصصين.</li>
-                    <li>مرونة كاملة لأطباء الخليج: تابع دراستك وأنت تعمل، مع نظام متابعة عملي في مصر كل 4-5 أسابيع.</li>
-                    <li>تحضير شامل للزمالة: منهج متكامل، محاضرات تفاعلية، ودعم مستمر لضمان اجتيازك للاختبار بثقة.</li>
-                    <li>دعم من أفضل الخبراء: تعلم مباشرة من استشاريي تقويم الأسنان المعتمدين، واكتسب أسرار النجاح في المجال.</li>
-                    <li>فرصة حصرية – عدد محدود من المقاعد! لا تضيع الوقت، فالفرص لا تتكرر كثيرًا! 🕒</li>
+                    <li>زرعات ألمانية أو كورية أصلية مع شهادة ضمان</li>
+                    <li>بدون ألم باستخدام التخدير الموضعي وأحدث التقنيات</li>
+                    <li>تعقيم صارم ومعايير أمان أوروبية</li>
+                    <li>نظام تقسيط مريح – بدون فوائد</li>
+                    <li>متابعة مجانية بعد الزراعة</li>
+                    <li>فريق طبي بخبرة أكثر من 10 سنوات في الزراعة الفورية والتجميلية</li>
                 {:else}
-                    <li>Comprehensive theoretical training covering the British Fellowship curricula (6 months online).</li>
-                    <li>Intensive practical training, including work on at least 20 orthodontic cases.</li>
-                    <li>Supervision by accredited consultants who hold the British Fellowship.</li>
-                    <li>Free and fully equipped accommodation.</li>
-                    <li>Direct practical support with assistance from onsite staff during work.</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                 {/if}
             </ul>
         {/snippet}
@@ -239,7 +249,7 @@
             button: {
                 text: {
                     en: "Enroll Now",
-                    ar: "سجل الآن"
+                    ar: "احجز موعدك الآن"
                 },
                 link: '/contact-us',
                 arrowVisible: true,
@@ -248,7 +258,7 @@
     >
         {#snippet title()}
             <h2 class="text-2xl font-bold text-center">
-                { isCurrentLangAr ? "ماذا ستحصل عليه عند التسجيل؟" : "Why Choose Our Program?" }
+                { isCurrentLangAr ? "مين المناسب للزراعة؟" : "Why Choose Our Program?" }
             </h2>
         {/snippet}
         {#snippet description()}
@@ -261,17 +271,58 @@
                 ]}
             >
                 {#if isCurrentLangAr}
-                    <li>برنامج تدريبي شامل لمدة 3 سنوات – 6 أشهر محاضرات أونلاين، وسنتان ونصف من التطبيق العملي.</li>
-                    <li>تجربة فريدة من نوعها – ستعمل على حالات حقيقية من اليوم الأول.</li>
-                    <li>دروس مباشرة ومسجلة – تابع التعلم وفق جدولك الزمني.</li>
-                    <li>فرصة استثنائية للأطباء العاملين في الخليج – بدون الحاجة لترك وظيفتك!</li>
-                    <li>شهادة إتمام معتمدة تؤهلك لاجتياز اختبار الزمالة البريطانية.</li>
+                    <li>لو فقدت سن أو أكثر</li>
+                    <li>لو بتعاني من ضعف التركيبات أو الإحراج منها</li>
+                    <li>لو نفسك تاكل براحتك وتضحك بدون خوف</li>
                 {:else}
-                    <li>Comprehensive theoretical training covering the British Fellowship curricula (6 months online).</li>
-                    <li>Intensive practical training, including work on at least 20 orthodontic cases.</li>
-                    <li>Supervision by accredited consultants who hold the British Fellowship.</li>
-                    <li>Free and fully equipped accommodation.</li>
-                    <li>Direct practical support with assistance from onsite staff during work.</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                {/if}
+            </ul>
+        {/snippet}
+    </Card>
+
+    <Card 
+        {isCurrentLangAr}
+        data={{
+            flip: true,
+            img: {
+                src: orthodonticsMembershipSVG,
+                alt: "Membership in Orthodontics"
+            },
+            button: {
+                text: {
+                    en: "Enroll Now",
+                    ar: "احجز موعدك الآن"
+                },
+                link: '/contact-us',
+                arrowVisible: true,
+            }
+        }}
+    >
+        {#snippet title()}
+            <h2 class="text-2xl font-bold text-center">
+                { isCurrentLangAr ? "النتائج في أقل من 3 شهور!" : "Why Choose Our Program?" }
+            </h2>
+        {/snippet}
+        {#snippet description()}
+            <ul 
+                class={[
+                    isCurrentLangAr ? "mr-8" : "ml-2", 
+                    "w-full", 
+                    "md:w-9/10",
+                    "list-disc",
+                ]}
+            >
+                {#if isCurrentLangAr}
+                    <li>استشارة وفحص مجاني</li>
+                    <li>وضع الزرعة خلال جلسة واحدة</li>
+                    <li>متابعة حتى التركيب النهائي</li>
+                {:else}
+                    <li></li>
+                    <li></li>
+                    <li></li>
                 {/if}
             </ul>
         {/snippet}
@@ -301,12 +352,12 @@
             {#key isCurrentLangAr}
                 <div class="flex flex-col gap-2" in:fly={{ y: -10, duration: 200 }}>
                     <h2 class="text-2xl font-bold text-center">
-                        { isCurrentLangAr ? "تواصل معنا" : "Contact Us" }
+                        { isCurrentLangAr ? "احجز موعدك الآن" : "Contact Us" }
                     </h2>
                     <p class="text-lg text-center">
                         {
                             isCurrentLangAr ? 
-                                "ارسل لنا استفسارك وسنقوم بالرد في خلال 24 ساعة" :
+                                "املأ النموذج التالي وسنتواصل معك خلال 24 ساعة" :
                                 "Send us your inquiry and we’ll respond within 24 hours."
                         }
                     </p>

@@ -15,7 +15,7 @@
     } = $props()
 
     let phoneNumber: number|undefined = $state()
-    let email: string|undefined = $state()
+    let age: string|undefined = $state()
 </script>
 
 <form 
@@ -40,27 +40,26 @@
         required
     />
     <input 
+        class="w-full bg-white p-3 rounded-sm mt-1" 
+        type="number" 
+        name="age"
+        placeholder={isCurrentLangAr ? "العمر" : "Age"} 
+        bind:value={ age }
+        required
+    />
+    <input 
         class="w-full bg-white p-3 rounded-sm" 
         type="number" 
         name="phoneNumber"
         dir="{ isCurrentLangAr ? phoneNumber ? "ltr": "rtl" : 'ltr' }"
-        placeholder={isCurrentLangAr ? "رقم الجوال" : "Phone Number"} 
+        placeholder={isCurrentLangAr ? "رقم الهاتف" : "Phone Number"} 
         bind:value={ phoneNumber }
-        required
-    />
-    <input 
-        class="w-full bg-white p-3 rounded-sm mt-1" 
-        type="email" 
-        name="email"
-        dir="{ isCurrentLangAr ? email ? "ltr": "rtl" : 'ltr' }"
-        placeholder={isCurrentLangAr ? "البريد الالكتروني" : "Email"} 
-        bind:value={ email }
         required
     />
     <textarea 
         class="w-full bg-white p-3 rounded-sm resize-none h-40" 
         name="message"
-        placeholder={isCurrentLangAr ? "رسالتك..." : "Your message..."} 
+        placeholder={isCurrentLangAr ? "مشكلتك الحالية..." : "Your message..."} 
         required
     ></textarea>
 

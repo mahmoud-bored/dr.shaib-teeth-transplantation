@@ -24,7 +24,7 @@ export const actions = {
         const data = await request.formData()
         const name = data.get('name')   
         const phoneNumber = data.get('phoneNumber')
-        const email = data.get('email')
+        const age = data.get('age')
         const message = data.get('message')
         
         let success
@@ -36,7 +36,7 @@ export const actions = {
                 html: `
                     <p><bold>Name:</bold> ${name}</p>
                     <p><bold>Phone Number:</bold> ${phoneNumber}</p>
-                    <p><bold>Email:</bold> ${email}</p>
+                    <p><bold>Age:</bold> ${age}</p>
                     <br/>
                     <p><bold>Message:</bold> ${message}</p>
                 `,
